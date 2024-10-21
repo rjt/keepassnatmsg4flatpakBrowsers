@@ -6,7 +6,11 @@ namespace KeePassNatMsg.NativeMessaging
 {
     public abstract class PosixHost : NativeMessagingHost
     {
-        private const string PosixScript = "#!/bin/bash\nmono {0}\n";
+        private const string PosixScript = """
+            #!/bin/bash
+            mono {0}
+
+            """;
         private const string PosixProxyPath = ".keepassnatmsg";
 
         private string _home = Environment.GetEnvironmentVariable("HOME");
