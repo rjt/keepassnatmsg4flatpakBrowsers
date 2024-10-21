@@ -22,7 +22,8 @@ This plugin is primarily intended for use with the [keepassxc-browser](https://g
  * request for unlocking the database if it is locked while connecting
  * searches in all opened databases (if user activates this feature)
  * Whenever events occur, the user is prompted either by tray notification or requesting interaction (allow/deny/remember).
-
+ * Now works with flatpak contained firefox.
+ * 
 ## System requirements
  * KeePass 2.17 or higher
  * For Windows: .NET Framework 4.0 or higher
