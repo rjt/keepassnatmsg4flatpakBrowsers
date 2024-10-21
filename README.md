@@ -28,6 +28,26 @@ This plugin is primarily intended for use with the [keepassxc-browser](https://g
  * For Windows: .NET Framework 4.0 or higher
  * For Linux: Mono 4.0 or higher
  * For Mac: Mono 4.0 or higher (untested)
+ * For FlatPak contained browsers: 
+ ** give permission to contained Firefox to access the org.freedesktop.mono D-Bus interface in order to call `flatpak-spawn --host mono exe`.
+ ** Not totally sure what other permissions are actually needed to get this to work.  Hopefully, many of the other permissions can be removed.
+ ** run the following flatpak command to find current permissions for firefox:
+```flatpak override --user --show org.mozilla.firefox
+[Context]
+sockets=gpg-agent;ssh-auth;system-bus;session-bus
+devices=shm;dri
+features=per-app-dev-shm;bluetooth
+filesystems=~/.local/share/applications:rw;~/.local/share/icons:rw;/usr/bin/mono;/usr/bin/csharp;host-etc;host-os;host
+persistent=.keepassnatmsg:rw
+
+[System Bus Policy]
+org.freedesktop.Flatpak=talk
+
+[Session Bus Policy]
+org.freedesktop.Flatpak=talk
+org.freedesktop.DBus=talk
+```
+
 
 ## Installation
 

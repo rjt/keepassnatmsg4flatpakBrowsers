@@ -1,0 +1,13 @@
+[Context]
+sockets=gpg-agent;ssh-auth;system-bus;session-bus
+devices=shm;dri
+features=per-app-dev-shm;bluetooth
+filesystems=~/.local/share/applications:rw;~/.local/share/icons:rw;/usr/bin/mono;/usr/bin/csharp;host-etc;host-os;host
+persistent=.keepassnatmsg:rw
+
+[System Bus Policy]
+org.freedesktop.Flatpak=talk
+
+[Session Bus Policy]
+org.freedesktop.Flatpak=talk
+org.freedesktop.DBus=talk
